@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+  <title>T Score Calculation </title>
+  <!-- release date: 4 November 2018 --->
+  <!-- Programmed by: Wach R. (wachr0@gmail.com) -->
+  <meta charset= "UTF-8" />
+  <link rel="stylesheet" href="TScoreCss.css" type="text/css">
+
+</head>
+<body >
+  <h1> Normalized T Score Calculat<a href="History.html" target="_blank">ion</a> </h1> 
+  <h2>  School of Physics. RMUTT (ฟิสิกส์ราชมงคล ธัญบุรี) </h2>
+<br/>
+<br/>
+<div align="center" >
+  <textarea  id="inputRawScore"  rows="10" cols="60"  placeholder="Input your raw scores in here...">
+</textarea>
+  <br/>
+  <br/>
+  <font size="4">Grade Option:&nbsp &nbsp</font>
+  <select id="gradeOption" onchange="calculate()">
+	<option value="1" select="Selected">A&nbsp &nbsp B+&nbsp B&nbsp &nbsp C+&nbsp C&nbsp &nbsp D+&nbsp D&nbsp &nbsp F</option>
+	<option value="2" >A&nbsp &nbsp  B&nbsp &nbsp C&nbsp &nbsp D&nbsp &nbsp F</option>
+	<option value="3">A&nbsp &nbsp  B+&nbsp B&nbsp &nbsp C+&nbsp C&nbsp &nbsp  D+&nbsp &nbsp D</option>
+	<option value="4">A&nbsp &nbsp  B&nbsp &nbsp  C&nbsp &nbsp D</option>
+	<option value="5">A&nbsp &nbsp  B+&nbsp  B&nbsp &nbsp  C+&nbsp C</option>
+	<option value="6">A&nbsp &nbsp B&nbsp &nbsp C</option>
+	<option value="7">A&nbsp &nbsp B</option>
+</select>	
+  <br/>	
+  <br/>
+  <table  cellpadding="15px" >
+  <tr>
+   <td > <input type="button" id="calBtn" class="button" value="Calculate"
+         onclick="calculate()">
+	</td>
+	<td> 
+	</td>
+	<td> <input type="button" id="printBtn" class="button" value="Print Result" disabled
+         onclick="printResult()"> </td>
+	<td></td><td></td><td></td><td></td>
+	<td><input type="button" id="helpBtn" class="button" value="User Guide"
+         onclick="openHelpWindow()"> </td>
+  </tr>
+  </table>
+</div> 
+<br/> <br/>
+<div  id="showTable" align= "center"> 
+</div>
+<script src="TScoreJs.js"></script>  
+
+</body>
+</html>
