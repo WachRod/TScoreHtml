@@ -11,7 +11,6 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
  const DEFAULT_TOLERANCE  = 1.0e-7;
 
   var average, sd;
- //document.getElementById("printBtn").disabled = true;
 
  var calBtn = document.getElementById("calBtn")
  calBtn.addEventListener('click', calculate);
@@ -41,7 +40,6 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
  
     var dataFromTextArea = document.getElementById("inputRawScore").value
 	if (dataFromTextArea == ''){
-	//	document.getElementById("printBtn").disabled = true;
 		printBtn.disabled=true;
 		alert("Please input your scores in textarea....");
 		return -1;
@@ -56,7 +54,6 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
 					if (dataFromTextArea[i] == '.') point += 1;
 					temp = temp + dataFromTextArea[i]
 					if (point > 1) {
-					//	document.getElementById("printBtn").disabled = true;
 						printBtn.disabled=true;
 						alert("Found any score not a number at line "+ (line+1));
 						return -1;
@@ -75,7 +72,6 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
 						temp = "";
 						n=n+1;
 						if ( n > (MAXIMUM_NUMBER_OF_DATA)) {
-					//	document.getElementById("printBtn").disabled = true;
 						printBtn.disabled=true;
 						alert ("Sorry! Your data exceed  "+(MAXIMUM_NUMBER_OF_DATA)+"\nPlease truncate your data","Error" );
 						return -1;
@@ -88,7 +84,6 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
 				
 			default :
 				if (!IN_COMMENT )	{
-			//	document.getElementById("printBtn").disabled = true;	
 				printBtn.disabled=true;
 				alert("Error at line"+(line+1));
 				return -1;
@@ -99,14 +94,14 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
 			rawScores[n] = parseFloat(temp);
 			n=n+1;
 			if ( n > (MAXIMUM_NUMBER_OF_DATA)) {
-						//document.getElementById("calBtn").disabled = true;
-						alert ("Sorry! Your data exceed  "+(MAXIMUM_NUMBER_OF_DATA)+"\nPlease truncate your data","Error" );
+				printBtn.disabled=true;
+				alert ("Sorry! Your data exceed  "+(MAXIMUM_NUMBER_OF_DATA)+"\nPlease truncate your data","Error" );
 				return -1;
 				} // if (n >=.....
 	  }
 	}// for loop
 		if ( n < 2) {
-			document.getElementById("printBtn").disabled = true;
+			printBtn.disabled=true
 			alert ("At least 2 data for T score calculation.")
 			return -1;
 		}
