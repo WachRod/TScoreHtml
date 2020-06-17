@@ -4,15 +4,25 @@
 // Office :  RMUTT, School of Physics.
 // First released:  November 2018
 // Second updated: 10 May 2019
-// Last updated: 16 May 2019.
+// Last updated: 16 June 2020.
 // Please have a happy face during code reading.
 //==============================================
 const MAXIMUM_NUMBER_OF_DATA = 3000;
  const DEFAULT_TOLERANCE  = 1.0e-7;
 
   var average, sd;
- document.getElementById("printBtn").disabled = true;
- 
+ //document.getElementById("printBtn").disabled = true;
+
+ var calBtn = document.getElementById("calBtn")
+ calBtn.addEventListener('click', calculate);
+ var printBtn = document.getElementById("printBtn");
+ printBtn.addEventListener('click', printResult);
+ printBtn.disabled=true;
+ var helpBtn = document.getElementById('helpBtn');
+ helpBtn.addEventListener('click',openHelpWindow );
+ var gradeOption =document.getElementById('gradeOption');
+ gradeOption.addEventListener('change',calculate);
+
  function formatDate(date) {
   var options= {weekday:'long', day:'numeric', month:'long', year:'numeric',hour:'numeric',minute:'numeric'};
  return date.toLocaleDateString("en-GB", options);
@@ -31,7 +41,8 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
  
     var dataFromTextArea = document.getElementById("inputRawScore").value
 	if (dataFromTextArea == ''){
-		document.getElementById("printBtn").disabled = true;
+	//	document.getElementById("printBtn").disabled = true;
+		printBtn.disabled=true;
 		alert("Please input your scores in textarea....");
 		return -1;
 	} else {
@@ -45,7 +56,8 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
 					if (dataFromTextArea[i] == '.') point += 1;
 					temp = temp + dataFromTextArea[i]
 					if (point > 1) {
-						document.getElementById("printBtn").disabled = true;
+					//	document.getElementById("printBtn").disabled = true;
+						printBtn.disabled=true;
 						alert("Found any score not a number at line "+ (line+1));
 						return -1;
 					}
@@ -63,7 +75,8 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
 						temp = "";
 						n=n+1;
 						if ( n > (MAXIMUM_NUMBER_OF_DATA)) {
-						document.getElementById("printBtn").disabled = true;
+					//	document.getElementById("printBtn").disabled = true;
+						printBtn.disabled=true;
 						alert ("Sorry! Your data exceed  "+(MAXIMUM_NUMBER_OF_DATA)+"\nPlease truncate your data","Error" );
 						return -1;
 						} // if (n >=.....
@@ -75,7 +88,8 @@ const MAXIMUM_NUMBER_OF_DATA = 3000;
 				
 			default :
 				if (!IN_COMMENT )	{
-				document.getElementById("printBtn").disabled = true;	
+			//	document.getElementById("printBtn").disabled = true;	
+				printBtn.disabled=true;
 				alert("Error at line"+(line+1));
 				return -1;
 			}

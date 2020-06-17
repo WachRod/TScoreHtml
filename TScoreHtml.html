@@ -19,7 +19,7 @@
   <br/>
   <br/>
   <font size="4">Grade Option:&nbsp &nbsp</font>
-  <select id="gradeOption" onchange="calculate()">
+  <select id="gradeOption" >
 	<option value="1" select="Selected">A&nbsp &nbsp B+&nbsp B&nbsp &nbsp C+&nbsp C&nbsp &nbsp D+&nbsp D&nbsp &nbsp F</option>
 	<option value="2" >A&nbsp &nbsp  B&nbsp &nbsp C&nbsp &nbsp D&nbsp &nbsp F</option>
 	<option value="3">A&nbsp &nbsp  B+&nbsp B&nbsp &nbsp C+&nbsp C&nbsp &nbsp  D+&nbsp &nbsp D</option>
@@ -32,16 +32,14 @@
   <br/>
   <table  cellpadding="15px" >
   <tr>
-   <td > <input type="button" id="calBtn" class="button" value="Calculate"
-         onclick="calculate()">
-	</td>
+   <td > 
+     <button id="calBtn" class="button">Calculate</button>
+   </td>
 	<td> 
 	</td>
-	<td> <input type="button" id="printBtn" class="button" value="Print Result" disabled
-         onclick="printResult()"> </td>
+	<td> <button id="printBtn" class="button" >Print Result</button>  </td>
 	<td></td><td></td><td></td><td></td>
-	<td><input type="button" id="helpBtn" class="button" value="User Guide"
-         onclick="openHelpWindow()"> </td>
+	<td><button id="helpBtn" class="button">User Guide</button>  </td>
   </tr>
   </table>
 </div> 

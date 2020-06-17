@@ -20,11 +20,7 @@ h1,h2 {
 textarea {
    font-size: 12pt;
  } 
-input:disabled
-{
-  -webkit-filter: blur(1px);
-  opacity:0.2;
-}
+
 
  select {
     width: 25%;
@@ -51,7 +47,11 @@ select option {
   border-radius: 15px;
   box-shadow: 0 5px #999;
 }
-
+.button:disabled
+{
+  -webkit-filter: blur(1px);
+  opacity:0.2;
+}
 .button:hover {background-color:#000066} /* #3e8e41 */
 
 .button:active {
