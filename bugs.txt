@@ -1,8 +1,8 @@
-แก้ไข bugs :  (16 May 2019)
-1. แก้ไข Grade Option   A, B+, B, C+, C, D+, D  ซึ่งแสดงผลช่องเกรด เป็น undefined ให้สามารถแสดงผลเป็นเกรดต่าง ๆ ตามที่เลือก
-2. ป้องกันการป้อนข้อมูล ให้มากกว่า 1 ค่า  เพราะถ้ามีข้อมูลเพียงค่าเดียว จะหา sd (standard deviation) ไม่ได้ เกิดข้อผิดพลาด การหารด้วย ศูนย์
-3. ถ้าโปรแกรมมีข้อผิดพลาด ให้ disable ปุ่ม print result  เสมอ
-4. เปลี่ยนการแสดงผลค่า z score ให้มีเลขทศนิยม 3 ตำแหน่ง เพราะถ้าแสดงเพียง 2 ตำแหน่ง จะได้ค่า z score  2 ค่าที่มีค่า
-เท่ากัน แต่ได้ค่า t score ต่างกัน
-ปรับปรุง : (14 July 2020)
-1. แยกส่วน Html และ JavaScript ออกจากกันอย่างเด็ดขาด
+Bugs Fixed :  (16 May 2019)
+1. The 'undefined' in grade column was fixed.
+2. Showing error message when user inputs only one datum. It cause zero division.
+3. Whenever an error occurred, the 'print result' button always be disable. 
+4. Displaying z score in 3 decimal point. No more the same z score value has a different T score value.
+
+Update : (14 July 2020)
+1. Html and  JavaScript coding are absolutely separated. (For a good Model-View-Controller design pattern.)
